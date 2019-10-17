@@ -63,5 +63,19 @@ public class ProjectDao {
 		return pmc;
 	}
 	
+	
+	
+	@Transactional
+	public void updateShoes(int id, String name, int size) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		ProjectModelClass pmc = new ProjectModelClass();
+		pmc.setSerialNumber(id);
+		pmc.setBrandName(name);
+		pmc.setSize(size);
+		session.update(pmc);
+	}
+	
 
 }
+

@@ -90,4 +90,14 @@ public class HomeController {
 	}
 	
 
+	@RequestMapping(value = "/updateShoes")
+	public String updateShoeDetails(Model model, @RequestParam("serialNumber") int no, @RequestParam("size") int sizeno, @RequestParam("brandName") String name) {
+	
+		projectdao.updateShoes(no, name, sizeno);
+		
+		
+		return "index";
+	}
+	
+
 }
